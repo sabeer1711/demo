@@ -3,4 +3,19 @@
 <h3>Server worked</h3>
 <h2>add a files to git</h2>
 
+<input type="text"
+        (input) = "updatServername($event)"
+
+> 
+<input type="text"
+    [(ngModel)]="Updateservername"    
+
+>
+
+<p>{{Updateservername}}</p>
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="createserverStatus()">Add a button</button>
+<p [innerText]="allowNewServer"></p>
+
+<p>{{serverStatus}}</p>
+<p></p>
 </div>
