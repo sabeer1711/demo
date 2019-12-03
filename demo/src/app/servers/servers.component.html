@@ -2,20 +2,36 @@
 
 <h3>Server worked</h3>
 <h2>add a files to git</h2>
+<label for="serverName">serverName</label>
 
-<input type="text"
+<!--<input type="text"
         (input) = "updatServername($event)"
 
 > 
+<h1>Practices</h1>
+<input type="text" [(ngModel)]="username">
+<p>{{username}}</p>
+<button class="btn btn-primary"  [disabled]= "username === '' " (click)= "username = '' ">reset</button> -->
+
+
 <input type="text"
-    [(ngModel)]="Updateservername"    
+    [(ngModel)]="servername"    
 
 >
+<<<<<<< HEAD
 <p>add a git hub</p>
+=======
+
+
+
+
+>>>>>>> 0f1079156ef6df3ab6ca7bcd3d0563683dec3ae0
 <p>{{Updateservername}}</p>
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="createserverStatus()">Add a button</button>
 <p [innerText]="allowNewServer"></p>
-
-<p>{{serverStatus}}</p>
+<p *ngIf="serverCreated">server was created , server name is {{servername}}</p>
+<!--<p>{{serverStatus}}</p> -->
 <p></p>
+<app-server></app-server>
 </div>
+
