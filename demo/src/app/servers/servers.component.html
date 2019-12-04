@@ -13,7 +13,16 @@
 <p>{{username}}</p>
 <button class="btn btn-primary"  [disabled]= "username === '' " (click)= "username = '' ">reset</button> -->
 
+<hr>
+<!--<button class="btn btn-primary" (click)="showsecret=!showsecret">display details</button> -->
+<button class="btn btn-primary" (click)="onToggle()">display details</button>
+<p *ngIf="showsecret">secret password='tuna'</p>
+<div *ngFor="let logitem of log"
+[ngStyle]="{    backgroundColor: logitem >= 5 ? 'blue' : 'transaparent' } "
+[ngClass]="{whitetext:logitem >= 5}"
 
+>{{ logitem }}</div>
+<hr>
 <input type="text"
     [(ngModel)]="servername"    
 
@@ -26,5 +35,6 @@
 <!--<p>{{serverStatus}}</p> -->
 <p>server was created , server name is {{servername}}</p>
 <app-server></app-server>
+<app-server *ngFor="let server of servers"></app-server>
 </div>
 
