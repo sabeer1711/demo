@@ -6,11 +6,13 @@ import { ServersComponent } from './servers/servers.component';
 import { ServerComponent } from './server/server.component';
 import {FormsModule} from '@angular/forms';
 import { from } from 'rxjs';
+import { HeaderComponent } from './header/header.component';
 @NgModule({
   declarations: [
     AppComponent,
     ServerComponent,
-    ServersComponent
+    ServersComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
