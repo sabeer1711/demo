@@ -17,11 +17,11 @@ onServerAdded(serverData:{serverName:string,serverContent:string}){
      
  });
  }
- onblueprintadded(blueprintData:{serverName:string,serverContent:string}){
+ onBlueprintAdded(blueprintData:{serverName:string,serverContent:string}){
    this.serverElements.push({
     type:'blueprint',
-     name:this.newServerName,
-     content:this.newServerContent
+     name:blueprintData.serverName,
+     content:blueprintData.serverContent
    })
  }
 
