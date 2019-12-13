@@ -10,19 +10,43 @@
   </div>
 </div>
 -->
-
+<!--
 <div class="container">
   <app-cockpit (serverCreated)="onServerAdded($event)"
                (blueprintAdded)="onblueprintAdded($event)" ></app-cockpit>
   <hr>
   <div class="row">
    <div class="col-xs-12" >
+     <button class="btn btn-primary" (click)="onChangefirst()">Change the first element</button>
+     <button class="btn btn-danger" (click)="onDestroyfirst()">Destroy the first component</button>
     <app-server-element *ngFor="let serverElement of serverElements"
     [srvElement]="serverElement"
     
-    ></app-server-element>
+    >
+    <p #contentparagraph><strong *ngIf="serverElement.type === 'server' " >{{serverElement.content}}</strong>
+    <em *ngIf="serverElement.type === 'blueprint' ">{{serverElement.content}}</em>
+    </p>
+
+
+  </app-server-element>
    </div> 
   </div>
   
   
+</div>
+-->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <app-game-control (intervalFired)="onIntervalFired($event)"> </app-game-control>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-odd *ngFor="let oddnumber of oddNumbers" [number]=[oddnumber]></app-odd>
+      <app-even *ngFor="let evennumber of evenNumbers" [number]=[evennumber]></app-even>
+
+    </div>
+  </div>
 </div>
