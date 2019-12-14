@@ -41,5 +41,9 @@ onServerAdded(serverData:{serverName:string,serverContent:string}){
  oddNumbers:number[]=[];
  evenNumbers:number[]=[]
 
+loadedFeature:string='receipe'
+ onNavigate(feature:string){
+  this.loadedFeature=feature;
+ }
  
 }
