@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Recipe } from './recipes.model';
+
+import { Recipe } from './recipe.model';
 
 @Component({
   selector: 'app-recipes',
@@ -7,12 +8,8 @@ import { Recipe } from './recipes.model';
   styleUrls: ['./recipes.component.css']
 })
 export class RecipesComponent implements OnInit {
+  selectedRecipe: Recipe;
 
-  recipes:Recipe[] = [
-    new Recipe('A Test recipe','This is simply test','https://www.seriouseats.com/2019/07/20190618-grilled-turkish-chicken-wings-vicky-wasik-13-1500x1125.jpg'),
-    new Recipe('A Test recipe','This is simply test','https://www.seriouseats.com/2019/07/20190618-grilled-turkish-chicken-wings-vicky-wasik-13-1500x1125.jpg')
-  ];
-  
   constructor() { }
 
   ngOnInit() {
