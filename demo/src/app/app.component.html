@@ -1,28 +1,53 @@
-<!--<app-header></app-header>
+<app-header (featureSelected)="onNavigate($event)"></app-header>
 
 <div class="container">
     
   <div class="row">
     <div class="col">
-        <app-recipes></app-recipes>
-      <app-shopping-list></app-shopping-list>
+        <app-recipes *ngIf="loadedFeature === 'receipe'"></app-recipes>
+      <app-shopping-list *ngIf="loadedFeature !== 'receipe'"></app-shopping-list>
     </div>
   </div>
 </div>
--->
 
+<!--
 <div class="container">
   <app-cockpit (serverCreated)="onServerAdded($event)"
-               (blueprintCreated)="onBlueprintCreated($event)" ></app-cockpit>
+               (blueprintAdded)="onblueprintAdded($event)" ></app-cockpit>
   <hr>
   <div class="row">
    <div class="col-xs-12" >
+     <button class="btn btn-primary" (click)="onChangefirst()">Change the first element</button>
+     <button class="btn btn-danger" (click)="onDestroyfirst()">Destroy the first component</button>
     <app-server-element *ngFor="let serverElement of serverElements"
     [srvElement]="serverElement"
     
-    ></app-server-element>
+    >
+    <p #contentparagraph><strong *ngIf="serverElement.type === 'server' " >{{serverElement.content}}</strong>
+    <em *ngIf="serverElement.type === 'blueprint' ">{{serverElement.content}}</em>
+    </p>
+
+
+  </app-server-element>
    </div> 
   </div>
   <app-servers></app-servers>
   
 </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <app-game-control (intervalFired)="onIntervalFired($event)"> </app-game-control>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-odd *ngFor="let oddnumber of oddNumbers" [number]=[oddnumber]></app-odd>
+      <app-even *ngFor="let evennumber of evenNumbers" [number]=[evennumber]></app-even>
+
+    </div>
+  </div>
+</div>
+-->
