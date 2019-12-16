@@ -1,7 +1,7 @@
 <app-header (featureSelected)="onNavigate($event)"></app-header>
 
 <div class="container">
-    
+  
   <div class="row">
     <div class="col">
         <app-recipes *ngIf="loadedFeature === 'receipe'"></app-recipes>
@@ -10,7 +10,7 @@
   </div>
 </div>
 
-<!--
+  <!--
 <div class="container">
   <app-cockpit (serverCreated)="onServerAdded($event)"
                (blueprintAdded)="onblueprintAdded($event)" ></app-cockpit>
@@ -51,3 +51,47 @@
   </div>
 </div>
 -->
+
+ <!-- <button class="btn btn-primary" (click)="onlyOdd = !onlyOdd">Only show odd numbers</button>
+  <br><br>
+  <ul class="list-group">
+    <div *ngIf="onlyOdd">
+      <li class="list-group-item" [ngClass]="{odd:odd %2 !==0}"
+        [ngStyle]="{backgroundColor:odd % 2 !== 0 ? 'yellow' :'transparent'}" *ngFor="let odd of oddNumbers">
+        {{odd}}
+      </li>
+    </div>
+     <div *ngIf="!onlyOdd">
+      <li
+       class="list-group-item"
+       [ngClass]="{odd:even % 2! == 0}"
+       [ngStyle]="{backgroundColor: even % 2 !== 0 ? 'yellow': 'transparent'}"
+        *ngFor="let even of evenNumbers" >
+        {{even}}
+      </li>
+    </div>
+    <ng-template [ngIf]="!onlyOdd">
+      <div>
+        <li
+       class="list-group-item"
+       [ngClass]="{odd:even % 2! == 0}"
+       [ngStyle]="{backgroundColor: even % 2 !== 0 ? 'yellow': 'transparent'}"
+        *ngFor="let even of evenNumbers" >
+        {{even}}
+      </li>
+      </div>
+    </ng-template> 
+    <div *appUnless="onlyOdd">
+      <li class="list-group-item" [ngClass]="{odd:even % 2! == 0}"
+        [ngStyle]="{backgroundColor: even % 2 !== 0 ? 'yellow': 'transparent'}" *ngFor="let even of evenNumbers">
+        {{even}}
+      </li>
+    </div>
+  </ul>
+  <p appBasicHighlight>directive working</p>
+  <p appBetterHighlight [defaultColor]="'red'" [highlightedColor]="'yellow'">directive working</p>
+  <div [ngSwitch]="value">
+    <p *ngSwitchCase="5">value is 5</p>
+    <p *ngSwitchCase="10">value is 10</p>
+    <p *ngSwitchDefault>value is Default</p>
+  </div>-->

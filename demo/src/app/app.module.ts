@@ -19,9 +19,13 @@ import { GameControlComponent } from './game-control/game-control.component';
 import { OddComponent } from './odd/odd.component';
 import { EvenComponent } from './even/even.component';
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
+import { BasicHighlightDirectives } from './basic-highlight/basic-highlight-directive';
+import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
+import { UnlessDirective } from './unless.directive';
 @NgModule({
   declarations: [
     AppComponent,
+    BasicHighlightDirectives,
     ServerComponent,
     ServersComponent,
     HeaderComponent,
@@ -35,7 +39,9 @@ import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-it
     GameControlComponent,
     OddComponent,
     EvenComponent,
-    RecipeItemComponent
+    RecipeItemComponent,
+    BetterHighlightDirective,
+    UnlessDirective
   ],
   imports: [
     BrowserModule,

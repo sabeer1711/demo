@@ -38,12 +38,17 @@ onServerAdded(serverData:{serverName:string,serverContent:string}){
      this.oddNumbers.push(firedNumber)
    }
  }
- oddNumbers:number[]=[];
- evenNumbers:number[]=[]
+// oddNumbers:number[]=[];
+ //evenNumbers:number[]=[]
 
 loadedFeature:string='receipe'
  onNavigate(feature:string){
   this.loadedFeature=feature;
  }
+ numbers= [1,2,3,4,5,6];
+ oddNumbers = [1,3,5];
+ evenNumbers = [2,4];
+ value=5;
+
  
 }
