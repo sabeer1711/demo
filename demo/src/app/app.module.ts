@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { ServersComponent } from './servers/servers.component';
 import { ServerComponent } from './server/server.component';
 import {FormsModule} from '@angular/forms';
-import { from } from 'rxjs';
+
 import {HeaderComponent} from './header/header.component'
 
 import { RecipesComponent } from './recipes/recipes.component';
@@ -22,6 +22,16 @@ import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-it
 import { BasicHighlightDirectives } from './basic-highlight/basic-highlight-directive';
 import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
 import { UnlessDirective } from './unless.directive';
+import { DropdownDirective } from './shared/dropdown.directive';
+
+import { AccountComponent } from './account/account.component';
+import { NewAccountComponent } from './new-account/new-account.component';
+import { LoggingService } from './logging.service';
+import { AccountService } from './account.service';
+
+import { InactiveUsersComponent } from './inactive-users/inactive-users.component';
+import { CounterService } from './counter.service';
+import { ActiveUsersComponent } from './active-users/active-users.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,13 +51,18 @@ import { UnlessDirective } from './unless.directive';
     EvenComponent,
     RecipeItemComponent,
     BetterHighlightDirective,
-    UnlessDirective
+    UnlessDirective,
+    DropdownDirective,
+    AccountComponent,
+    NewAccountComponent,
+    ActiveUsersComponent,
+    InactiveUsersComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [LoggingService,AccountService,CounterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
