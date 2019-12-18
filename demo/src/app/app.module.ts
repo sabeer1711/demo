@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ServersComponent } from './servers/servers.component';
-import { ServerComponent } from './server_dummy/server_dummy.component';
+import { ServerDummyComponent } from './server_dummy/server_dummy.component';
 import {FormsModule} from '@angular/forms';
 
 import {HeaderComponent} from './header/header.component'
@@ -23,6 +23,7 @@ import { BasicHighlightDirectives } from './basic-highlight/basic-highlight-dire
 import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
 import { UnlessDirective } from './unless.directive';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { ServerComponent } from './servers/server/server.component';
 
 import { AccountComponent } from './account/account.component';
 import { NewAccountComponent } from './new-account/new-account.component';
@@ -42,7 +43,7 @@ import { ServersService } from './servers/servers.service';
   declarations: [
     AppComponent,
     BasicHighlightDirectives,
-    ServerComponent,
+   ServerDummyComponent,
     ServersComponent,
     HeaderComponent,
     RecipesComponent,

@@ -9,7 +9,7 @@ import {Component} from '@angular/core';
         }      
          `   ]
 })
-export class ServerComponent{
+export class ServerDummyComponent{
 
 server="first";
 serverId=10;
