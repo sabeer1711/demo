@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ServersComponent } from './servers/servers.component';
-import { ServerComponent } from './server/server.component';
+import { ServerComponent } from './server_dummy/server_dummy.component';
 import {FormsModule} from '@angular/forms';
 
 import {HeaderComponent} from './header/header.component'
@@ -32,6 +32,12 @@ import { AccountService } from './account.service';
 import { InactiveUsersComponent } from './inactive-users/inactive-users.component';
 import { CounterService } from './counter.service';
 import { ActiveUsersComponent } from './active-users/active-users.component';
+import { ShoppingListService } from './shopping-list/shopping-list.service';
+import { HomeComponent } from './home/home.component';
+import { UserComponent } from './users/user/user.component';
+import { UsersComponent } from './users/users.component';
+import { EditServerComponent } from './servers/edit-server/edit-server.component';
+import { ServersService } from './servers/servers.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,13 +62,19 @@ import { ActiveUsersComponent } from './active-users/active-users.component';
     AccountComponent,
     NewAccountComponent,
     ActiveUsersComponent,
-    InactiveUsersComponent
+    InactiveUsersComponent,
+    HomeComponent,
+    UserComponent,
+    UsersComponent,
+    ServerComponent,
+    EditServerComponent,
+    ServersComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [LoggingService,AccountService,CounterService],
+  providers: [LoggingService,AccountService,CounterService,ShoppingListService,ServersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

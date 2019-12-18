@@ -2,6 +2,8 @@ import {
   Component,
   OnInit
 } from '@angular/core';
+import { ServersService } from './servers.service';
+
 
 @Component({
   selector: 'app-servers',
@@ -11,15 +13,19 @@ import {
 export class ServersComponent implements OnInit {
   allowNewServer = false;
   servername = "testserver"
-  servers = ["server1", "server2"];
+  //servers = ["server1", "server2"];
   serverCreated = false
-  constructor() {
+  private servers: {id: number, name: string, status: string}[] = [];
+  constructor(private serversService: ServersService) {
     setTimeout(() => {
       this.allowNewServer = true
     }, 2000);
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    //this.servers = this.serversService.getServers();
+    this.servers = this.serversService.getServers();
+  }
   //assignments
   username = "user1"
 
@@ -28,7 +34,7 @@ export class ServersComponent implements OnInit {
 
   createserverStatus() {
     this.serverCreated = true
-    this.servers.push(this.servername)
+  //  this.servers.push(this.servername)
     return this.serverStatus = "now will created the name is " + this.servername
   }
   Updateservername = "first server"

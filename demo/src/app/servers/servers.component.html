@@ -15,7 +15,7 @@
 
   <hr>
   <!--<button class="btn btn-primary" (click)="showsecret=!showsecret">display details</button> -->
-  <button class="btn btn-primary" (click)="onToggle()">display details</button>
+  <!--<button class="btn btn-primary" (click)="onToggle()">display details</button>
   <p *ngIf="showsecret">secret password='tuna'</p>
   <div *ngFor="let logitem of log" [ngStyle]="{    backgroundColor: logitem >= 5 ? 'blue' : 'transaparent' } "
     [ngClass]="{whitetext:logitem >= 5}">{{ logitem }}</div>
@@ -25,9 +25,28 @@
   <p>{{Updateservername}}</p>
   <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="createserverStatus()">Add a button</button>
   <p [innerText]="allowNewServer"></p>
-  <p *ngIf="serverCreated">server was created , server name is {{servername}}</p>
+  <p *ngIf="serverCreated">server was created , server name is {{servername}}</p>-->
   <!--<p>{{serverStatus}}</p> -->
-  <p>server was created , server name is {{servername}}</p>
+  <!-- <p>server was created , server name is {{servername}}</p>
   <app-server></app-server>
-  <app-server *ngFor="let server of servers"></app-server>
+  <app-server *ngFor="let server of servers"></app-server>-->
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <div class="list-group">
+        <a
+          href="#"
+          class="list-group-item"
+          *ngFor="let server of servers">
+          {{ server.name }}
+        </a>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <app-edit-server></app-edit-server>
+      <hr>
+      <app-server></app-server>
+    </div>
+  </div>
+  
+  
 </div>
