@@ -3,6 +3,7 @@ import {
   OnInit
 } from '@angular/core';
 import { ServersService } from './servers.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class ServersComponent implements OnInit {
   //servers = ["server1", "server2"];
   serverCreated = false
   private servers: {id: number, name: string, status: string}[] = [];
-  constructor(private serversService: ServersService) {
+  constructor(private serversService: ServersService,private router: Router,private route:ActivatedRoute) {
     setTimeout(() => {
       this.allowNewServer = true
     }, 2000);
@@ -47,5 +48,7 @@ export class ServersComponent implements OnInit {
     this.showsecret = !this.showsecret
     this.log.push(this.log.length + 1);
   }
-
+  onReload(){
+    this.router.navigate(['servers'],{relativeTo:this.route})
+  }
 }

@@ -39,6 +39,15 @@ import { UserComponent } from './users/user/user.component';
 import { UsersComponent } from './users/users.component';
 import { EditServerComponent } from './servers/edit-server/edit-server.component';
 import { ServersService } from './servers/servers.service';
+import { Routes, RouterModule } from '@angular/router';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AppRoutingModule } from './app.routing.module';
+
+
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,11 +78,13 @@ import { ServersService } from './servers/servers.service';
     UsersComponent,
     ServerComponent,
     EditServerComponent,
-    ServersComponent
+    ServersComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [LoggingService,AccountService,CounterService,ShoppingListService,ServersService],
   bootstrap: [AppComponent]
