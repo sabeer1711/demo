@@ -42,6 +42,14 @@ import { ServersService } from './servers/servers.service';
 import { Routes, RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AppRoutingModule } from './app.routing.module';
+import { AuthGuard } from './auth-guard.service';
+import { AuthService } from './auth.service';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import {ServerResolver} from './servers/server/server-resolver.service';
+import { CanDeactivateGuard } from './servers/edit-server/can-deactivate-guard.service';
+import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+
 
 
 
@@ -79,14 +87,17 @@ import { AppRoutingModule } from './app.routing.module';
     ServerComponent,
     EditServerComponent,
     ServersComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ErrorPageComponent,
+    RecipeStartComponent,
+    RecipeEditComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule
   ],
-  providers: [LoggingService,AccountService,CounterService,ShoppingListService,ServersService],
+  providers: [LoggingService,AccountService,CounterService,ShoppingListService,ServersService,AuthGuard,AuthService,ServerResolver,CanDeactivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
