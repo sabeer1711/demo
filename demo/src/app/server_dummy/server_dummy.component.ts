@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 @Component({
-    selector:'app-server',
+    selector:'app-server-dummy',
     templateUrl:'./server.component.html',
     styles:[`
     .online{
@@ -9,7 +9,7 @@ import {Component} from '@angular/core';
         }      
          `   ]
 })
-export class ServerComponent{
+export class ServerDummyComponent{
 
 server="first";
 serverId=10;
